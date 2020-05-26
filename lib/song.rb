@@ -61,9 +61,9 @@ class Song
 
 #initializes a song and artist_name based on the filename format
   def self.new_from_filename(filename)
-    song_array = filename.split(" - ")
-    song_array[1] = song_array[1].chomp(".mp3")
-    song = self.new
+    song_array = filename.split(" - ") #seperate artist name from the rest of the data
+    song_array[1] = song_array[1].chomp(".mp3") #remove the mp3 part of the string
+    song = self.new 
     song.name = song_array[1]
     song.artist_name = song_array[0]
     song
