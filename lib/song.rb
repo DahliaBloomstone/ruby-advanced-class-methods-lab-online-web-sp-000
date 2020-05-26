@@ -13,6 +13,7 @@ class Song
 #instantiates and saves the song, and it returns the new song that was created
 def self.create
   song = self.new
+  self.all << song 
   song
 end
 
