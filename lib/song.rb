@@ -42,7 +42,6 @@ class Song
 #returns the existing Song object (doesn't create a new one) when provided the title of an existing Song
 #creates a new Song object with the provided title if one doesn't already exist
   def self.find_or_create_by_name(title)
-    #either return a matching song instance with that name or create a new song with the name and return the song instance
     result = self.find_by_name(title)
     if result
       result
@@ -50,7 +49,7 @@ class Song
       self.create_by_name(title)
     end
   end
-
+#returns all the song instances in alphabetical order by song name
   def self.alphabetical
     sorted = self.all.sort_by {|song| song.name}
     sorted
