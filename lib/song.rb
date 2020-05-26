@@ -13,12 +13,12 @@ class Song
 #instantiates and saves the song, and it returns the new song that was created
 def self.create
   song = self.new
-  self.all << song 
+  self.all << song #class constructor
   song
 end
 
 #instantiates a song with a name property
-def self.new_by_name(name)
+def self.new_by_name(name) #class constructor 
   song = self.new
   song.name = name
   song
