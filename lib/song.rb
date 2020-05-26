@@ -21,8 +21,13 @@ def self.new_by_name(name)
   song = self.new
   song.name = name
   song
-end 
+end
 
+#can find a song present in @@all by name
+#returns falsey when a song name is not present in @@all
+def self.find_by_name(name)
+  @@all.find{ |x| x.name == name}
+end 
 
 
 
