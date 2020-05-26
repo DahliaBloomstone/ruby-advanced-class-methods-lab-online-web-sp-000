@@ -49,12 +49,14 @@ class Song
       self.create_by_name(title)
     end
   end
+
 #returns all the song instances in alphabetical order by song name
   def self.alphabetical
     sorted = self.all.sort_by {|song| song.name}
     sorted
   end
 
+#initializes a song and artist_name based on the filename format
   def self.new_from_filename(filename)
     song_array = filename.split(" - ")
     song_array[1] = song_array[1].chomp(".mp3")
@@ -64,6 +66,7 @@ class Song
     song
   end
 
+#initializes and saves a song and artist_name based on the filename format
   def self.create_from_filename(filename)
     result = self.new_from_filename(filename)
     song = self.create
@@ -72,6 +75,7 @@ class Song
     song
   end
 
+#clears all the song instances from the @@all array
   def self.destroy_all
     self.all.clear
   end
