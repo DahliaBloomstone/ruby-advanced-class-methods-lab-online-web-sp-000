@@ -17,19 +17,22 @@ class Song
     song
   end
 
-    instantiates a song with a name property
+#instantiates a song with a name property
   def self.new_by_name(title) #class constructor
     song = self.new
     song.name = title
     song
   end
 
+#instantiates and saves a song with a name property
   def self.create_by_name(title) #class constructor
     song = self.create
     song.name = title
     song
   end
 
+#can find a song present in @@all by name
+#returns falsey when a song name is not present in @@all
   def self.find_by_name(title) #class finder
     result = self.all.detect {|song| song.name == title}
     result
