@@ -51,6 +51,8 @@ class Song
     end
   end
 
+  #song 1 == song 2
+
 #returns all the song instances in alphabetical order by song name
   def self.alphabetical
     sorted = self.all.sort_by {|song| song.name}
