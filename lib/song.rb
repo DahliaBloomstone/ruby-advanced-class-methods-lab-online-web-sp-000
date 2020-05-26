@@ -27,8 +27,11 @@ end
 #returns falsey when a song name is not present in @@all
 def self.find_by_name(name)
   @@all.find{ |x| x.name == name}
-end 
+end
 
-
+#invokes .find_by_name and .create_by_name instead of repeating code
+#returns the existing Song object (doesn't create a new one) when provided the title of an existing Song
+self.find_by_name(name) || self.create_by_name(name)
+end
 
 end
