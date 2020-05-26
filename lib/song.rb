@@ -1,9 +1,10 @@
+#Given:
 class Song
-  attr_accessor :name, :artist_name
-  @@all = []
+  attr_accessor :name, :artist_name #basic properties 
+  @@all = [] #class variable to store all instances for Song created through the instance method Song#save
 
   def self.all
-    @@all
+    @@all  #build class methods that interact on the class data of @@all
   end
 
   def save
