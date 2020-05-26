@@ -10,12 +10,14 @@ class Song
     self.class.all << self
   end
 
+#instantiates and saves the song, and it returns the new song that was created
   def self.create #class constructor
     song = self.new
     self.all << song
     song
   end
 
+    instantiates a song with a name property
   def self.new_by_name(title) #class constructor
     song = self.new
     song.name = title
